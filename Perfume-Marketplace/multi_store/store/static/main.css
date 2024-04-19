@@ -1,0 +1,105 @@
+
+.fragrance {
+    height: 400px;
+}
+.c_img {
+    max-width: 100%;
+    height: 400px;
+    object-fit: fill;
+}
+.p {
+    text-align: center;
+    font-size: 200%;
+    font-weight: 800;
+}
+.p_link {
+    text-decoration: none;
+    color: rgb(20, 39, 39);
+}
+.p_link:hover{
+    color: darkslategray;
+    text-shadow: 4px 4px 5px gainsboro;
+}
+.p:hover{
+    transform: scaleX(0.8);
+}
+#carouselExampleControls .carousel-inner {
+    display: flex;
+}
+#carouselExampleControls .carousel-item {
+    margin-right: 0;
+    flex: 0 0 20%;
+    display: inline;
+}
+#carouselExampleControls .carousel-control-prev, #carouselExampleControls .carousel-control-next {
+    width: 6vh;
+    height: 6vh;
+    background-color: rgb(255, 195, 143);
+    border-radius: 50%;
+    top: 50%;
+}
+.b {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    font-family: Copperplate;
+    text-shadow: 2px 2px 1px olivedrab, 4px 4px 3px yellow, 0 0 5px aquamarine;
+}
+.brand{
+    padding: 5% 5%;
+}
+.brand_cir {
+    padding: 4%;
+    position: relative;
+    z-index: 9;
+}
+.brand_cir_btn {
+    z-index: 29;
+    position: relative;
+    bottom: 310px;
+    width: 220px;
+    height: 200px;
+    border-radius: 50%;
+}
+.b_edit {
+    border-radius: 50%;
+    text-align: center;
+    height: 200px;
+}
+.img_edit {
+    width: 220px;
+    height: 200px;
+    z-index: 9;
+    position: relative;
+    border-radius: 50%;
+    border: 3px outset dimgray;
+    opacity: 0.8;
+}
+.content {
+    padding-top: 22%;
+    font-size: 29px;
+    font-weight: 800;
+    z-index: 19;
+    color: darkred;
+    position: relative;
+    bottom: 165px;
+}
+.celeb {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: Copperplate;
+    text-align: center;
+    text-shadow: 2px 2px 1px deeppink, 4px 4px 3px yellow, 0 0 5px darkblue;
+}
+.product_label {
+    position: relative;
+    float: right;
+    z-index: 9;
+}
+.product_btn {
+    position: relative;
+    float: right;
+    z-index: 19;
+    left: 14px;
+    opacity: 0;
+}

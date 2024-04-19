@@ -1,0 +1,48 @@
+.body {
+    min-height: 100%;
+}
+.sty {
+    font-family:'Brush Script MT',cursive; 
+    font-size: 35px; 
+    font-weight: 400;
+    transition: width 1s height 1s;
+}
+.sty:hover {
+    font-size: 40px;
+    text-shadow: 4px 4px 5px rosybrown;
+}
+.searchbar {
+    width: 555px;
+}
+.footer {
+    /*background-color: rgb(255, 248, 242);*/
+    background-color: aquamarine;
+}
+.follow {
+    display: flex;
+}
+.icon {
+    font-size: 35px;
+    padding-right: 4%;
+}
+.sub {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 25px;
+    font-weight: 100;
+    color: rgb(74, 72, 72);
+}
+.btn {
+    background-color:rgb(223, 60, 163);
+    color: white;
+    padding: 1% 2%;
+    width: 40%;
+    font-size: 20px;
+    font-weight: 600;
+}
+.subscribe {
+    border: none;
+    border-radius: 2%;
+    padding: 2.5%;
+    width: 75%;
+    margin-bottom: 1.5%;
+}

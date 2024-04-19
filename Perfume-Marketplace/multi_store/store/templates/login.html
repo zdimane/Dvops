@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class=" col-lg-5 mx-auto border rounded p-3">
+                <h3 class="alert">Login</h3>
+                <form action="/login", method ="POST">
+                    {% csrf_token%}
+
+                    {% if error %}
+                        <div class="alert alert-warning" role="alert">
+                            {{error}}
+                        </div>
+                    {% endif %}
+
+                    <!-- phone number -->
+                    <div class="form-group mb-2">
+                        <label for="">Phone number / E-mail</label>
+                        <input 
+                            type="text" 
+                            name="user"
+                            class="form-control form-control-sm">
+                    </div>
+
+                    <!-- password -->
+                    <div class="form-group mb-2">
+                        <label for="">Password</label>
+                        <input 
+                            type="password" 
+                            name="password"
+                            class="form-control form-control-sm" > 
+                    </div>
+
+                    <!--forgot password-->
+                    <a href="/forgotpass" class="h6 float-end text-decoration-none text-primary">
+                        Forgot Password
+                    </a>
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

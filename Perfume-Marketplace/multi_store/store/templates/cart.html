@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load cart %}
+
+    {% if noprd %}
+        <br>
+        <div class="d-flex aligns-items-center justify-content-center">
+            <h1>{{ noprd }}</h1>
+        </div>
+        <br>
+        <div class="text-center">
+            <form action="/index">
+                <button class="btn btn-lg btn-primary text">Go Back to Shop!</button> 
+            </form>
+        </div>
+        
+        
+
+    {% else %}
+        {% if status %}
+            {% if type == True %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{status}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% else %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{status}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="container col-lg-6">
+            <h3 class="alert display-4 text-center">Your Cart</h3>
+            {% for p in cart %}
+                <div class="card mx-auto mb-3 mt-4">
+                    <div class="card-body">
+                        <form action="/cart" method="POST">
+                            {% csrf_token %}
+                            <input hidden type="text" value="{{p.id}}" name="prdid">
+                            <button type="submit" class="close float-end btn btn-sm" style="font-size: 26px; font-weight:600; background-color: white;">
+                                <span>&times;</span>
+                            </button>
+                        </form>
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="img-thumbnail rounded" src="{{p.image.url}}" style="width:12rem">
+                            </div>
+                            <div class="col-7">
+                                <h1>{{p.name}}</h1>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>Price</h4>
+                                        <h5>Quantity</h5>
+                                        <br>
+                                        <h3>Total</h3>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center"> {{p.price|currency}}</h4>
+                                        <h5 class="text-center">{{p|cart_quantity:request.session.cart}} </h5>
+                                        <br>
+                                        <h3 class="text-center">{{p|cart_price:request.session.cart|currency}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="card mx-auto mb-4">
+                <div class="card-body">
+                    <h2>Price Details</h2>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Total Amount</h4>
+                        </div>
+                        <div class="col">
+                            <h4 class="text-center">{{cart|cart_total:request.session.cart|currency}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="/" 
+                    class="btn btn-lg btn-primary btn-outline-info float-end border rounded mb-5" 
+                    style="color:white"
+                    data-bs-toggle="modal"
+                    data-bs-target="#checkout"
+                        >Check Out</a>
+            </div>
+
+            <div class="modal" id="checkout" tabindex="-1">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Check Out</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div>
+                        <form action="/check-out" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Adress</label>  
+                                <input type="textarea" name="adress"class="form-control">
+                                <input hidden type="textarea" value="{{cart|cart_total:request.session.cart}} "name="total" class="form-control">                  
+                            </div>
+                            <br>
+                            <input type="submit" class="btn btn-sm btn-success float-end" value="Check Out">
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

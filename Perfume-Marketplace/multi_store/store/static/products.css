@@ -1,0 +1,83 @@
+.flex {
+    display:flex; 
+    justify-content:center; 
+    align-items: center;
+}
+.container {
+    margin-top:3%;
+    width: 1300px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: papayawhip;
+    z-index: 50;
+    border: 4px outset moccasin; 
+}
+.pos {
+    margin-left: 8%;
+}
+.img {
+    padding:5%; 
+    width: 500px;
+    background-color: aliceblue;
+}
+.content {
+    margin-left: 12%;
+    width: 500px;
+}
+.heading {
+    font-family: Garamond, serif;
+    font-size: 65px;
+    text-shadow: 4px 2px 2px deepskyblue;
+}
+.size {
+    color: rgb(67, 66, 66);
+    font-size: 20px;
+}
+.price {
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0;
+}
+.tax{
+    font-size: 18px;
+    margin-left: 18%;
+}
+.brand {
+    font-size: 35px;
+    font-weight: 800;
+    color: darkmagenta;
+    font-family: 'Times New Roman', Times, serif;
+}
+.gen {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    width: 85px;
+    padding: 1%;
+}
+.w_g {
+    background-color: salmon;
+}
+.m_g {
+    background-color: slateblue;
+}
+.con_des {
+    padding: 3%;
+}
+.description{
+    font-size: 18px;
+}
+.celeb {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Copperplate;
+    text-align: center;
+    text-shadow: 2px 2px 1px deeppink, 4px 4px 3px yellow;
+}
+.type {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    padding: 1%;
+    background-color: purple;
+}
